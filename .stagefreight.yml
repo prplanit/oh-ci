@@ -33,8 +33,6 @@ targets:
     path: "{var:org}/{var:repo}"
     tags:
       - "{version}"
-      - "{major}.{minor}"
-      - "{major}"
       - "latest"
     when: { git_tags: [stable], events: [tag] }
     credentials: DOCKER
