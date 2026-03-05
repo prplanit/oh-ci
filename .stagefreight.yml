@@ -77,3 +77,32 @@ targets:
     file: "README.md"
     description: "Minimal CI/automation image with core shell tools and a Pokemon."
     link_base: "https://gitlab.prplanit.com/precisionplanit/{var:repo}/-/blob/main"
+
+  # ── Primary release ─────────────────────────────────────────────
+  - id: primary-release
+    kind: release
+    aliases: ["{version}", "latest"]
+    when: { git_tags: [stable], events: [tag] }
+
+lint:
+  level: full
+  modules:
+    freshness:
+      enabled: true
+      options:
+        cache_ttl: 300
+        sources:
+          docker_images: true
+    tabs:
+      enabled: true
+    secrets:
+      enabled: true
+    conflicts:
+      enabled: true
+    filesize:
+      enabled: true
+
+security:
+  enabled: true
+  sbom: true
+  release_detail: full
