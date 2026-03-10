@@ -95,4 +95,4 @@ docker build -t prplanit/oh-ci:latest .
 
 ## License
 
-GPL-3.0 — See [LICENSE](LICENSE) for details.
+Distributed under the [AGPL-3.0-only](LICENSE) License. See [LICENSING.md](docs/LICENSING.md) for commercial licensing.
