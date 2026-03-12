@@ -2,13 +2,15 @@ version: 1
 
 vars:
   org: prplanit
+  github_org: PrPlanIT
+  gitlab_group: PrPlanIT
   repo: oh-ci
 
 sources:
   primary:
     kind: git
     worktree: "."
-    url: "https://gitlab.prplanit.com/precisionplanit/{var:repo}"
+    url: "https://gitlab.prplanit.com/{var:gitlab_group}/{var:repo}"
     default_branch: "main"
 
 policies:
@@ -74,7 +76,7 @@ targets:
     when: { branches: [main], events: [push, tag] }
     file: "README.md"
     description: "Minimal CI/automation image with core shell tools and a Pokemon."
-    link_base: "https://gitlab.prplanit.com/precisionplanit/{var:repo}/-/blob/main"
+    link_base: "https://gitlab.prplanit.com/{var:gitlab_group}/{var:repo}/-/blob/main"
 
   # ── Primary release ─────────────────────────────────────────────
   - id: primary-release

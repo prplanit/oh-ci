@@ -6,11 +6,14 @@ RUN cargo install krabby --version 0.3.0 --root /out
 # ---- Runtime image ----
 FROM docker.io/library/alpine:3.23.3
 
-LABEL maintainer="SoFMeRight <sofmeright@gmail.com>" \
+LABEL maintainer="PrPlanIT <precisionplanit@gmail.com>" \
       org.opencontainers.image.title="oh-ci" \
       org.opencontainers.image.description="Minimal CI/automation image with core shell tools." \
-      org.opencontainers.image.source="https://gitlab.prplanit.com/precisionplanit/oh-ci" \
-      org.opencontainers.image.licenses="GPL-3.0"
+      org.opencontainers.image.source="https://github.com/PrPlanIT/oh-ci" \
+      org.opencontainers.image.url="https://hub.docker.com/r/prplanit/oh-ci" \
+      org.opencontainers.image.documentation="https://github.com/PrPlanIT/oh-ci#readme" \
+      org.opencontainers.image.licenses="GPL-3.0" \
+      org.opencontainers.image.vendor="PrPlanIT"
 
 RUN apk add --no-cache \
       bash \
